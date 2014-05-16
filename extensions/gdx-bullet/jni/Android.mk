@@ -5,7 +5,7 @@ LOCAL_MODULE    := gdx-bullet
 LOCAL_C_INCLUDES := src/bullet/ src/custom/ src/extras/Serialize/ 
  
 LOCAL_CFLAGS := $(LOCAL_C_INCLUDES:%=-I%) -O2 -Wall -D__ANDROID__
-LOCAL_CPPFLAGS := $(LOCAL_C_INCLUDES:%=-I%) -O2 -Wall -D__ANDROID__ -fno-strict-aliasing -fno-rtti -DBT_NO_PROFILE -fexceptions
+LOCAL_CPPFLAGS := $(LOCAL_C_INCLUDES:%=-I%) -O2 -Wall -D__ANDROID__ -fno-strict-aliasing -fno-rtti -DBT_NO_PROFILE
 LOCAL_LDLIBS := -lm
 LOCAL_ARM_MODE  := arm
  
@@ -120,6 +120,8 @@ LOCAL_SRC_FILES := memcpy_wrap.c\
 	src/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.cpp\
 	src/bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.cpp\
 	src/bullet/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.cpp\
+	src/bullet/BulletDynamics/Dynamics/btFractureBody.cpp\
+	src/bullet/BulletDynamics/Dynamics/btFractureDynamicsWorld.cpp\
 	src/bullet/BulletDynamics/Dynamics/btRigidBody.cpp\
 	src/bullet/BulletDynamics/Dynamics/btSimpleDynamicsWorld.cpp\
 	src/bullet/BulletDynamics/Dynamics/Bullet-C-API.cpp\

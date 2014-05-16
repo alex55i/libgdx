@@ -77,6 +77,16 @@ import com.badlogic.gdx.math.Matrix4;
 %include "BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h"
 
 %{
+#include <BulletDynamics/Dynamics/btFractureDynamicsWorld.h>
+%}
+%include "BulletDynamics/Dynamics/btFractureDynamicsWorld.h"
+
+%{
+#include <BulletDynamics/Dynamics/btFractureBody.h>
+%}
+%include "BulletDynamics/Dynamics/btFractureBody.h"
+
+%{
 #include <BulletDynamics/Character/btCharacterControllerInterface.h>
 %}
 %include "BulletDynamics/Character/btCharacterControllerInterface.h"
@@ -106,6 +116,11 @@ import com.badlogic.gdx.math.Matrix4;
 #include <BulletDynamics/ConstraintSolver/btSolverBody.h>
 %}
 %include "BulletDynamics/ConstraintSolver/btSolverBody.h"
+
+%{
+#include <BulletDynamics/ConstraintSolver/btFixedConstraint.h>
+%}
+%include "BulletDynamics/ConstraintSolver/btFixedConstraint.h"
 
 %{
 #include <BulletDynamics/ConstraintSolver/btSliderConstraint.h>

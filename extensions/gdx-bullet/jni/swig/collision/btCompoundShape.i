@@ -12,13 +12,20 @@ import com.badlogic.gdx.math.Matrix3;
 import com.badlogic.gdx.math.Matrix4;
 %}
 
+%extend btCompoundShape {
+	unsigned long getInternalChildShapePointer(int n) {
+		btCollisionShape* shape = $self->getChildShape(n);
+		return (unsigned long)shape;
+	}
+}
+
 %rename(internalAddChildShape) btCompoundShape::addChildShape;
 %javamethodmodifiers btCompoundShape::addChildShape "private";
 %rename(internalRemoveChildShape) btCompoundShape::removeChildShape;
 %javamethodmodifiers btCompoundShape::removeChildShape "private";
 %rename(internalRemoveChildShapeByIndex) btCompoundShape::removeChildShapeByIndex;
 %javamethodmodifiers btCompoundShape::removeChildShapeByIndex "private";
-%ignore btCompoundShape::getChildShape;
+%rename(internalgetChildShape) btCompoundShape::getChildShape;
 
 %typemap(javacode) btCompoundShape %{
 	protected Array<btCollisionShape> children = new Array<btCollisionShape>();

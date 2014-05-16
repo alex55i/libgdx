@@ -7,7 +7,6 @@
 %rename(internalSetCollisionShape) btCollisionObject::setCollisionShape;
 %javamethodmodifiers btCollisionObject::setCollisionShape "private";
 %rename(internalGetCollisionShape) btCollisionObject::getCollisionShape;
-%javamethodmodifiers btCollisionObject::getCollisionShape "private";
 
 %typemap(javaout) 	btCollisionObject *, const btCollisionObject *, btCollisionObject * const & {
 	return btCollisionObject.getInstance($jnicall, $owner);
